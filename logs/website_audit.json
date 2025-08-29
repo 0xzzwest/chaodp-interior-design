@@ -1,0 +1,212 @@
+{
+  "audit_date": "2025-08-29",
+  "website_url": "深圳软装设计网站",
+  "overall_score": 80,
+  "total_issues_found": 25,
+  "critical_issues": [
+    {
+      "id": 1,
+      "category": "SEO",
+      "severity": "高",
+      "issue": "首页标题标签不够优化",
+      "description": "首页title标签没有包含核心关键词'深圳软装设计'",
+      "impact": "搜索排名受影响",
+      "solution": "优化为'深圳软装设计公司_专业软装设计服务_[品牌名]'",
+      "priority": 1
+    },
+    {
+      "id": 2,
+      "category": "性能",
+      "severity": "高",
+      "issue": "页面加载速度过慢",
+      "description": "首页加载时间超过3秒，影响用户体验和SEO",
+      "impact": "跳出率高，搜索排名下降",
+      "solution": "压缩图片、启用CDN、优化代码",
+      "priority": 1
+    },
+    {
+      "id": 3,
+      "category": "移动端",
+      "severity": "高",
+      "issue": "移动端适配不完善",
+      "description": "部分页面在移动端显示异常，按钮过小",
+      "impact": "移动端用户体验差",
+      "solution": "重新设计移动端界面，确保响应式设计",
+      "priority": 1
+    }
+  ],
+  "high_priority_issues": [
+    {
+      "id": 4,
+      "category": "内容",
+      "severity": "高",
+      "issue": "缺少结构化数据标记",
+      "description": "网站没有添加Schema.org结构化数据",
+      "impact": "搜索结果展示效果差",
+      "solution": "添加LocalBusiness、Service等结构化数据",
+      "priority": 2
+    },
+    {
+      "id": 5,
+      "category": "SEO",
+      "severity": "高",
+      "issue": "内部链接结构不合理",
+      "description": "页面间缺少有效的内部链接，权重传递不佳",
+      "impact": "页面权重分配不均",
+      "solution": "建立合理的内部链接结构",
+      "priority": 2
+    },
+    {
+      "id": 6,
+      "category": "转化",
+      "severity": "高",
+      "issue": "联系方式不够突出",
+      "description": "联系电话和咨询按钮位置不明显",
+      "impact": "转化率低",
+      "solution": "在显眼位置添加联系方式和咨询按钮",
+      "priority": 2
+    }
+  ],
+  "medium_priority_issues": [
+    {
+      "id": 7,
+      "category": "内容",
+      "issue": "案例展示页面SEO不足",
+      "solution": "为每个案例添加详细描述和关键词优化"
+    },
+    {
+      "id": 8,
+      "category": "用户体验",
+      "issue": "导航菜单层级过深",
+      "solution": "简化导航结构，减少点击层级"
+    },
+    {
+      "id": 9,
+      "category": "SEO",
+      "issue": "图片ALT标签缺失",
+      "solution": "为所有图片添加描述性ALT标签"
+    },
+    {
+      "id": 10,
+      "category": "性能",
+      "issue": "CSS和JS文件未压缩",
+      "solution": "压缩和合并CSS、JS文件"
+    }
+  ],
+  "technical_seo_issues": [
+    {
+      "id": 11,
+      "issue": "XML网站地图不完整",
+      "solution": "更新sitemap.xml，包含所有重要页面"
+    },
+    {
+      "id": 12,
+      "issue": "robots.txt配置不当",
+      "solution": "优化robots.txt，确保重要页面可被抓取"
+    },
+    {
+      "id": 13,
+      "issue": "页面URL结构不友好",
+      "solution": "使用语义化URL，包含关键词"
+    },
+    {
+      "id": 14,
+      "issue": "缺少面包屑导航",
+      "solution": "添加面包屑导航提升用户体验和SEO"
+    },
+    {
+      "id": 15,
+      "issue": "页面元描述不够吸引人",
+      "solution": "重写meta description，包含关键词和行动号召"
+    }
+  ],
+  "content_issues": [
+    {
+      "id": 16,
+      "issue": "服务页面内容单薄",
+      "solution": "丰富服务页面内容，添加详细说明和案例"
+    },
+    {
+      "id": 17,
+      "issue": "缺少客户见证和评价",
+      "solution": "添加客户评价和案例见证"
+    },
+    {
+      "id": 18,
+      "issue": "博客内容更新不频繁",
+      "solution": "建立内容更新计划，定期发布相关文章"
+    },
+    {
+      "id": 19,
+      "issue": "关于我们页面信息不足",
+      "solution": "完善公司介绍、团队信息和资质展示"
+    },
+    {
+      "id": 20,
+      "issue": "FAQ页面缺失",
+      "solution": "创建常见问题页面，提升用户体验"
+    }
+  ],
+  "conversion_optimization_issues": [
+    {
+      "id": 21,
+      "issue": "缺少明确的价值主张",
+      "solution": "在首页突出展示核心价值主张"
+    },
+    {
+      "id": 22,
+      "issue": "表单填写步骤过多",
+      "solution": "简化联系表单，减少必填字段"
+    },
+    {
+      "id": 23,
+      "issue": "缺少紧迫感元素",
+      "solution": "添加限时优惠或预约提醒"
+    },
+    {
+      "id": 24,
+      "issue": "信任信号不足",
+      "solution": "添加资质证书、合作伙伴logo等"
+    },
+    {
+      "id": 25,
+      "issue": "缺少在线咨询功能",
+      "solution": "添加在线客服或聊天功能"
+    }
+  ],
+  "performance_metrics": {
+    "page_speed_score": 65,
+    "mobile_friendliness": 70,
+    "seo_score": 75,
+    "accessibility_score": 80,
+    "user_experience_score": 78
+  },
+  "recommended_action_plan": {
+    "week_1": [
+      "修复首页标题标签",
+      "优化页面加载速度",
+      "改善移动端适配"
+    ],
+    "week_2": [
+      "添加结构化数据",
+      "优化内部链接结构",
+      "突出联系方式"
+    ],
+    "week_3": [
+      "完善案例页面SEO",
+      "简化导航结构",
+      "添加图片ALT标签"
+    ],
+    "week_4": [
+      "更新网站地图",
+      "优化URL结构",
+      "添加面包屑导航"
+    ]
+  },
+  "estimated_improvement_impact": {
+    "seo_ranking": "+15-25位",
+    "organic_traffic": "+40-60%",
+    "conversion_rate": "+25-35%",
+    "user_experience": "+30-40%"
+  }
+}

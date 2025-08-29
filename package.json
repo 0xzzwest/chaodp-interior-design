@@ -1,0 +1,32 @@
+{
+  "name": "codebuddy-glm45-integration",
+  "version": "1.0.0",
+  "description": "CodeBuddy + Claude Code + GLM-4.5 集成开发环境",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
+    "test": "vitest"
+  },
+  "keywords": ["codebuddy", "claude-code", "glm-4.5", "ai", "typescript"],
+  "author": "CodeBuddy User",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "winston": "^3.0.0"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "claude-dev.apiProvider": "openai-compatible",
+    "claude-dev.openaiCompatibleEndpoint": "https://open.bigmodel.cn/api/paas/v4/",
+    "claude-dev.apiKey": "8b4fd62e02154af7b6967d24808cd2e0.7PeVIjsEhGIrse7x",
+    "claude-dev.modelName": "glm-4-plus",
+    "claude-dev.maxTokens": 4096
+}

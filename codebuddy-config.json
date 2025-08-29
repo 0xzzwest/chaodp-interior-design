@@ -1,0 +1,27 @@
+{
+    "project": {
+        "name": "CodeBuddy with Claude Code & GLM-4.5",
+        "version": "1.0.0",
+        "description": "集成 Claude Code 编程框架和 GLM-4.5 AI 能力的开发环境"
+    },
+    "ai_integration": {
+        "framework": "Claude Code",
+        "model": "GLM-4.5 (glm-4-plus)",
+        "provider": "智谱 AI",
+        "capabilities": [
+            "智能代码生成",
+            "代码解释和分析",
+            "自动重构建议",
+            "错误检测和修复",
+            "中文编程支持",
+            "多语言代码支持"
+        ]
+    },
+    "development_features": {
+        "auto_completion": true,
+        "code_explanation": true,
+        "refactoring_suggestions": true,
+        "error_detection": true,
+        "chinese_support": true
+    }
+}

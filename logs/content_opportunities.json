@@ -1,0 +1,208 @@
+{
+  "analysis_date": "2025-08-29",
+  "market": "深圳软装设计",
+  "total_opportunities": 15,
+  "high_priority_opportunities": [
+    {
+      "id": 1,
+      "title": "深圳各区域软装指南系列",
+      "description": "针对南山、福田、罗湖、宝安等不同区域的软装特色指南",
+      "search_volume": "高",
+      "competition": "中",
+      "priority": "高",
+      "keywords": [
+        "南山软装",
+        "福田软装设计",
+        "罗湖室内设计",
+        "宝安软装公司"
+      ],
+      "content_type": "系列文章",
+      "estimated_traffic": "2000-3000/月"
+    },
+    {
+      "id": 2,
+      "title": "深圳气候适配软装专题",
+      "description": "针对深圳湿热气候的防潮、通风、采光软装解决方案",
+      "search_volume": "中高",
+      "competition": "低",
+      "priority": "高",
+      "keywords": [
+        "深圳防潮软装",
+        "湿热气候软装",
+        "深圳通风设计"
+      ],
+      "content_type": "专题页面",
+      "estimated_traffic": "1500-2500/月"
+    },
+    {
+      "id": 3,
+      "title": "深圳小户型软装改造案例",
+      "description": "针对深圳高房价下小户型的空间优化软装方案",
+      "search_volume": "高",
+      "competition": "中高",
+      "priority": "高",
+      "keywords": [
+        "深圳小户型软装",
+        "小空间设计",
+        "深圳公寓软装"
+      ],
+      "content_type": "案例展示",
+      "estimated_traffic": "3000-4000/月"
+    }
+  ],
+  "medium_priority_opportunities": [
+    {
+      "id": 4,
+      "title": "深圳软装风格趋势分析",
+      "description": "2025年深圳流行的软装风格和趋势预测",
+      "search_volume": "中",
+      "competition": "中",
+      "priority": "中",
+      "keywords": [
+        "深圳软装趋势",
+        "2025软装风格",
+        "深圳家居流行"
+      ],
+      "content_type": "趋势报告",
+      "estimated_traffic": "1000-1500/月"
+    },
+    {
+      "id": 5,
+      "title": "深圳软装预算指南",
+      "description": "不同预算下的深圳软装方案和性价比分析",
+      "search_volume": "高",
+      "competition": "高",
+      "priority": "中",
+      "keywords": [
+        "深圳软装价格",
+        "软装预算",
+        "深圳软装多少钱"
+      ],
+      "content_type": "指南文章",
+      "estimated_traffic": "2500-3500/月"
+    },
+    {
+      "id": 6,
+      "title": "深圳软装材料选购指南",
+      "description": "深圳本地软装材料市场和选购技巧",
+      "search_volume": "中",
+      "competition": "中",
+      "priority": "中",
+      "keywords": [
+        "深圳软装材料",
+        "深圳家居市场",
+        "软装材料选购"
+      ],
+      "content_type": "购买指南",
+      "estimated_traffic": "800-1200/月"
+    }
+  ],
+  "seasonal_opportunities": [
+    {
+      "id": 7,
+      "title": "深圳春季软装搭配",
+      "description": "适合深圳春季的色彩搭配和材质选择",
+      "season": "春季",
+      "keywords": [
+        "春季软装",
+        "深圳春季装饰"
+      ],
+      "estimated_traffic": "500-800/月"
+    },
+    {
+      "id": 8,
+      "title": "深圳夏季清凉软装",
+      "description": "夏季降温和清爽感的软装设计方案",
+      "season": "夏季",
+      "keywords": [
+        "夏季软装",
+        "清凉家居",
+        "深圳夏季装饰"
+      ],
+      "estimated_traffic": "800-1200/月"
+    }
+  ],
+  "long_tail_opportunities": [
+    {
+      "id": 9,
+      "title": "深圳新房软装全攻略",
+      "keywords": [
+        "深圳新房软装",
+        "新房软装步骤"
+      ],
+      "estimated_traffic": "600-900/月"
+    },
+    {
+      "id": 10,
+      "title": "深圳二手房软装改造",
+      "keywords": [
+        "深圳二手房改造",
+        "旧房软装翻新"
+      ],
+      "estimated_traffic": "400-700/月"
+    },
+    {
+      "id": 11,
+      "title": "深圳办公室软装设计",
+      "keywords": [
+        "深圳办公室软装",
+        "商业空间软装"
+      ],
+      "estimated_traffic": "300-500/月"
+    },
+    {
+      "id": 12,
+      "title": "深圳儿童房软装设计",
+      "keywords": [
+        "深圳儿童房设计",
+        "儿童软装安全"
+      ],
+      "estimated_traffic": "400-600/月"
+    },
+    {
+      "id": 13,
+      "title": "深圳老人房软装设计",
+      "keywords": [
+        "深圳老人房软装",
+        "适老化软装设计"
+      ],
+      "estimated_traffic": "200-400/月"
+    },
+    {
+      "id": 14,
+      "title": "深圳软装色彩搭配技巧",
+      "keywords": [
+        "软装色彩搭配",
+        "深圳家居配色"
+      ],
+      "estimated_traffic": "500-800/月"
+    },
+    {
+      "id": 15,
+      "title": "深圳软装维护保养指南",
+      "keywords": [
+        "软装保养",
+        "深圳家居维护"
+      ],
+      "estimated_traffic": "200-300/月"
+    }
+  ],
+  "content_strategy_recommendations": {
+    "immediate_actions": [
+      "创建深圳各区域软装指南系列（优先南山、福田）",
+      "制作气候适配软装专题页面",
+      "整理小户型软装改造案例集"
+    ],
+    "monthly_content_plan": [
+      "每月发布2-3篇区域性软装指南",
+      "每季度更新一次趋势分析报告",
+      "每月分享3-5个真实案例"
+    ],
+    "seo_focus": [
+      "重点优化'深圳软装设计'相关长尾词",
+      "建立本地化内容集群",
+      "加强案例页面的SEO优化"
+    ]
+  },
+  "estimated_total_monthly_traffic": "15000-25000"
+}

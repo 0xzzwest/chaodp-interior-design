@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>巢搭配软装资讯内容管理后台</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .status-item {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .status-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #667eea;
+      display: block;
+    }
+
+    .status-label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+    .btn {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      margin: 0.5rem;
+    }
+
+    .btn:hover {
+      background: #5a6fd8;
+      transform: translateY(-2px);
+    }
+
+    .btn.btn-success {
+      background: #27ae60;
+    }
+
+    .btn.btn-success:hover {
+      background: #229954;
+    }
+
+    .btn.btn-warning {
+      background: #f39c12;
+    }
+
+    .btn.btn-warning:hover {
+      background: #e67e22;
+    }
+
+    .page-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .page-item {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .page-info h4 {
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-info p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .page-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .articles-preview {
+      margin-top: 2rem;
+    }
+
+    .article-item {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #667eea;
+    }
+
+    .article-title {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-summary {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .article-meta {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 0.5rem;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+    }
+
+    .success-message {
+      background: #d4edda;
+      color: #155724;
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      border: 1px solid #c3e6cb;
+    }
+
+    .error-message {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      border: 1px solid #f5c6cb;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+
+      .page-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>巢搭配软装资讯内容管理后台</h1>
+    <p>基于关键词自动获取和改写热门资讯文章</p>
+  </div>
+
+  <div class="container">
+    <!-- 系统状态 -->
+    <div class="dashboard">
+      <div class="card">
+        <h3>📊 系统状态</h3>
+        <div class="status-grid">
+          <div class="status-item">
+            <span class="status-number" id="totalPages">-</span>
+            <div class="status-label">落地页数量</div>
+          </div>
+          <div class="status-item">
+            <span class="status-number" id="totalArticles">-</span>
+            <div class="status-label">文章总数</div>
+          </div>
+          <div class="status-item">
+            <span class="status-number" id="lastUpdate">-</span>
+            <div class="status-label">最后更新</div>
+          </div>
+        </div>
+        <button class="btn btn-success" onclick="updateAllArticles()">🔄 更新所有文章</button>
+        <button class="btn" onclick="loadStatus()">📈 刷新状态</button>
+      </div>
+
+      <div class="card">
+        <h3>⚡ 快速操作</h3>
+        <p style="margin-bottom: 1rem; color: #666;">选择需要更新的页面类型</p>
+        <button class="btn" onclick="updatePage('shenzhen-interior-design')">深圳软装设计</button>
+        <button class="btn" onclick="updatePage('shenzhen-interior-design-company')">深圳软装公司</button>
+        <button class="btn" onclick="updatePage('shenzhen-home-interior-design')">深圳家居软装</button>
+        <button class="btn" onclick="updatePage('shenzhen-commercial-interior-design')">深圳商业软装</button>
+        <button class="btn" onclick="updatePage('shenzhen-office-interior-design')">深圳办公软装</button>
+        <button class="btn" onclick="updatePage('shenzhen-interior-accessories')">深圳软装配饰</button>
+      </div>
+    </div>
+
+    <!-- 页面管理 -->
+    <div class="card">
+      <h3>📄 页面内容管理</h3>
+      <div class="page-list" id="pageList">
+        <div class="loading">正在加载页面信息...</div>
+      </div>
+    </div>
+
+    <!-- 文章预览 -->
+    <div class="card articles-preview">
+      <h3>📰 文章预览</h3>
+      <p style="margin-bottom: 1rem; color: #666;">点击上方页面查看对应的文章内容</p>
+      <div id="articlesPreview">
+        <div class="loading">请选择页面查看文章</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 页面配置
+    const PAGE_CONFIG = {
+      'shenzhen-interior-design': '深圳软装设计',
+      'shenzhen-interior-design-company': '深圳软装公司',
+      'shenzhen-home-interior-design': '深圳家居软装',
+      'shenzhen-commercial-interior-design': '深圳商业软装',
+      'shenzhen-office-interior-design': '深圳办公软装',
+      'shenzhen-interior-accessories': '深圳软装配饰'
+    };
+
+    // 加载系统状态
+    async function loadStatus() {
+      try {
+        const response = await fetch('/api/status');
+        const data = await response.json();
+
+        if (data.success) {
+          const stats = data.data;
+          document.getElementById('totalPages').textContent = stats.total_pages;
+
+          const totalArticles = Object.values(stats.page_stats).reduce((sum, count) => sum + count, 0);
+          document.getElementById('totalArticles').textContent = totalArticles;
+
+          const lastUpdate = stats.last_update ?
+            new Date(stats.last_update).toLocaleString('zh-CN') : '未更新';
+          document.getElementById('lastUpdate').textContent = lastUpdate;
+
+          // 更新页面列表
+          updatePageList(stats.page_stats);
+        }
+      } catch (error) {
+        console.error('加载状态失败:', error);
+        showMessage('加载状态失败', 'error');
+      }
+    }
+
+    // 更新页面列表
+    function updatePageList(pageStats) {
+      const pageList = document.getElementById('pageList');
+      pageList.innerHTML = '';
+
+      Object.entries(PAGE_CONFIG).forEach(([key, name]) => {
+        const count = pageStats[key] || 0;
+        const pageItem = document.createElement('div');
+        pageItem.className = 'page-item';
+        pageItem.innerHTML = `
+                    <div class="page-info">
+                        <h4>${name}</h4>
+                        <p>文章数量: ${count} | 页面标识: ${key}</p>
+                    </div>
+                    <div class="page-actions">
+                        <button class="btn" onclick="viewArticles('${key}')">查看文章</button>
+                        <button class="btn btn-warning" onclick="updatePage('${key}')">更新内容</button>
+                    </div>
+                `;
+        pageList.appendChild(pageItem);
+      });
+    }
+
+    // 查看文章
+    async function viewArticles(pageKey) {
+      const preview = document.getElementById('articlesPreview');
+      preview.innerHTML = '<div class="loading">正在加载文章...</div>';
+
+      try {
+        const response = await fetch(`/api/articles/${pageKey}`);
+        const data = await response.json();
+
+        if (data.success && data.data.length > 0) {
+          preview.innerHTML = '';
+          data.data.forEach(article => {
+            const articleItem = document.createElement('div');
+            articleItem.className = 'article-item';
+            articleItem.innerHTML = `
+                            <div class="article-title">${article.title}</div>
+                            <div class="article-summary">${article.summary}</div>
+                            <div class="article-meta">
+                                创建时间: ${new Date(article.created_at).toLocaleString('zh-CN')} | 
+                                关键词: ${article.keywords.join(', ')}
+                            </div>
+                        `;
+            preview.appendChild(articleItem);
+          });
+        } else {
+          preview.innerHTML = '<div class="loading">该页面暂无文章内容</div>';
+        }
+      } catch (error) {
+        console.error('加载文章失败:', error);
+        preview.innerHTML = '<div class="loading">加载文章失败</div>';
+      }
+    }
+
+    // 更新单个页面
+    async function updatePage(pageKey) {
+      const pageName = PAGE_CONFIG[pageKey];
+      if (!confirm(`确定要更新 ${pageName} 的文章内容吗？`)) {
+        return;
+      }
+
+      showMessage(`正在更新 ${pageName} 的文章...`, 'info');
+
+      try {
+        const response = await fetch(`/api/update/${pageKey}`, {
+          method: 'POST'
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          showMessage(`${pageName} 文章更新成功！`, 'success');
+          loadStatus(); // 刷新状态
+        } else {
+          showMessage(`${pageName} 文章更新失败`, 'error');
+        }
+      } catch (error) {
+        console.error('更新失败:', error);
+        showMessage(`${pageName} 文章更新失败`, 'error');
+      }
+    }
+
+    // 更新所有文章
+    async function updateAllArticles() {
+      if (!confirm('确定要更新所有页面的文章内容吗？这可能需要几分钟时间。')) {
+        return;
+      }
+
+      showMessage('正在更新所有文章，请稍候...', 'info');
+
+      try {
+        const response = await fetch('/api/update/all', {
+          method: 'POST'
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          const successCount = Object.values(data.results).filter(Boolean).length;
+          const totalCount = Object.keys(data.results).length;
+          showMessage(`批量更新完成！成功更新 ${successCount}/${totalCount} 个页面`, 'success');
+          loadStatus(); // 刷新状态
+        } else {
+          showMessage('批量更新失败', 'error');
+        }
+      } catch (error) {
+        console.error('批量更新失败:', error);
+        showMessage('批量更新失败', 'error');
+      }
+    }
+
+    // 显示消息
+    function showMessage(message, type = 'info') {
+      // 移除现有消息
+      const existingMessages = document.querySelectorAll('.success-message, .error-message');
+      existingMessages.forEach(msg => msg.remove());
+
+      // 创建新消息
+      const messageDiv = document.createElement('div');
+      messageDiv.className = type === 'success' ? 'success-message' :
+        type === 'error' ? 'error-message' : 'success-message';
+      messageDiv.textContent = message;
+
+      // 插入到容器顶部
+      const container = document.querySelector('.container');
+      container.insertBefore(messageDiv, container.firstChild);
+
+      // 3秒后自动移除
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 3000);
+    }
+
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', function () {
+      loadStatus();
+    });
+
+    // 定时刷新状态（每5分钟）
+    setInterval(loadStatus, 5 * 60 * 1000);
+  </script>
+</body>
+
+</html>
