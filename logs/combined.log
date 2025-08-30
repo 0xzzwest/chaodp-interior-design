@@ -1,7 +1,0 @@
-{"endpoint":"https://***/api/paas/v4/","level":"info","message":"AI 助手初始化完成","model":"glm-4-plus","service":"ai-assistant","timestamp":"2025-08-29 18:26:05"}
-{"description":"创建一个用户管理系统的服务类...","language":"typescript","level":"info","message":"开始生成代码","service":"ai-assistant","timestamp":"2025-08-29 18:26:05"}
-{"generationTime":2026.52625,"level":"info","message":"代码生成完成","riskLevel":"low","service":"ai-assistant","timestamp":"2025-08-29 18:26:07","tokenCount":101}
-{"codeLength":103,"language":"typescript","level":"info","message":"开始代码优化","service":"ai-assistant","timestamp":"2025-08-29 18:26:07"}
-{"level":"info","message":"代码优化完成","optimizedLength":133,"originalLength":103,"service":"ai-assistant","timestamp":"2025-08-29 18:26:07"}
-{"codeLength":103,"language":"typescript","level":"info","message":"开始代码质量分析","service":"ai-assistant","timestamp":"2025-08-29 18:26:07"}
-{"level":"info","message":"代码质量分析完成","score":91,"service":"ai-assistant","timestamp":"2025-08-29 18:26:07"}

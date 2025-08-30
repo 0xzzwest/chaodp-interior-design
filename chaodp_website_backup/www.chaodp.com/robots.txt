@@ -1,5 +1,0 @@
-# robots.txt generated at http://tool.chinaz.com/robots/ 
-User-agent: *
-Allow: /index/index/index
-Disallow: /index/index/*
-Sitemap: https://www.chaodp.com/sitemap.xml
